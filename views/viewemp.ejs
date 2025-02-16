@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(157, 198, 255, 0.8), rgba(129, 129, 129, 0.8)), url('https://source.unsplash.com/1600x900/?abstract,modern');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        .form-container, .table-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #ff7f50, #ff4500);
+            border: none;
+        }
+        .btn-primary:hover {    
+            background: linear-gradient(to right, #ff4500, #ff7f50);
+        }
+        table {
+            width: 100%;
+            color: white;
+        }
+        table, th, td {
+            border: 1px solid white;
+            text-align: center;
+        }
+        th, td {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="mt-5 table-container p-4">
+            <a href="/" class="btn btn-light">Add Data</a>
+            <h1 class="text-center">View Data</h1>
+            <table class="table table-bordered text-white">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th>Hobby</th>
+                    <th>City</th>
+                    <th>Text</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+                <% empdata.map((v,i)=>{ %>
+                    <tr>
+                        <td><%= v.name %></td>
+                        <td><%= v.email %></td>
+                        <td><%= v.password %></td>
+                        <td><%= v.gender %></td>
+                        <td><%= v.hobby %></td>
+                        <td><%= v.city %></td>
+                        <td><%= v.text %></td>
+                        <td><img src="<%= v.image %>" alt="" width="100px"></td>
+                        <td>
+                            <a href="/deletedata/?empId=<%= v.id %>" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="/editdata/<%= v.id %>" class="btn btn-warning btn-sm">Update</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

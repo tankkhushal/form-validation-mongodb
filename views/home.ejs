@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(126, 174, 241, 0.651), rgba(28, 41, 44, 0.8)), url('https://source.unsplash.com/1600x900/?abstract,modern');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #ff7f50, #ff4500);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #ff4500, #ff7f50);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Home Page</h1>
+        <div class="text-center mb-3">
+            <a href="viewemp" class="btn btn-light">View Data</a>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 form-container">
+                <form method="post" action="/insertdata" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label">Enter Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Enter Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Enter Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Enter Gender</label><br>
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Hobbies</label><br>
+                        <input type="checkbox" name="hobby" value="music"> Music
+                        <input type="checkbox" name="hobby" value="singing"> Singing
+                        <input type="checkbox" name="hobby" value="running"> Running
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Select City</label>
+                        <select name="city" class="form-select">
+                            <option value="">--Select City--</option>
+                            <option value="surat">Surat</option>
+                            <option value="vadodara">Vadodara</option>
+                            <option value="junagadh">Junagadh</option>
+                            <option value="rajkot">Rajkot</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Enter Text</label>
+                        <textarea name="text" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Upload Image</label>
+                        <input type="file" name="image" class="form-control">
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
